@@ -6,13 +6,14 @@
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 16:36:04 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/02 18:09:08 by lporras-         ###   ########.fr       */
+/*   Updated: 2022/04/03 17:42:28 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <strings.h>
 #include <stddef.h>
+#include <unistd.h>
 
 void	ft_bzero(void *s, size_t n);
 
@@ -33,7 +34,8 @@ int	main(void)
 
 	n = 5;
 	ft_bzero(a, n);
-	printf("mi función;%s\n", (a));
+	write (1, &a, 11);
+	//printf("mi función;%s\n", (a));
 }
 
 void	ft_bzero(void *s, size_t n)
@@ -43,7 +45,7 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)s)[i] = '0';
+		((unsigned char *)s)[i] = 0;
 		i++;
 	}
 }
