@@ -1,16 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/02 18:12:33 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/06 17:41:10 by lporras-         ###   ########.fr       */
+/*   Created: 2022/04/04 17:29:35 by lporras-          #+#    #+#             */
+/*   Updated: 2022/04/06 18:10:10 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	char	*d;
+	char	*o;
+
+	d = (char *)dst;
+	o = (char *)src;
+	if (d > o)
+	{
+		while (len--)
+		{
+			d[len] = o[len];
+		}
+	}
+	else if (d < o)
+	{
+		ft_memcpy(dst, src, len);
+	}
+	return (d);
+}
+
+/*#include <string.h>
+#include <stdio.h>
+#include <stddef.h>
+
+void	*ft_memmove(void *dst, const void *src, size_t len);
+
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+
+int	main(void)
+{
+	unsigned char	src[]= "buenas tardes";
+	unsigned char	dest[] = "8888";
+	size_t			len;
+
+	len = 5;
+	printf("%s\n", ft_memmove(dest, src, len));
+	printf("%s\n", memmove(dest, src, len));
+}
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -26,19 +66,4 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return ((void *)dst);
 }
-
-/*#include <string.h>
-#include <stdio.h>
-
-void	*ft_memcpy(void *dst, const void *src, size_t n);
-
-int	main(void)
-{
-	unsigned char o[] = "luz mary";
-	unsigned char d[] = "buenos dias mundo";
-	size_t	n;
-
-	n = 4;
-	printf("la funcion imprime: %s\n", memcpy(o, d, n));
-	printf("mi funcion: %s\n", ft_memcpy(o, d, n));
-}*/
+*/

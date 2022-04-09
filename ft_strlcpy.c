@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 17:29:33 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/06 15:37:18 by lporras-         ###   ########.fr       */
+/*   Created: 2022/04/06 19:08:31 by lporras-          #+#    #+#             */
+/*   Updated: 2022/04/09 14:21:25 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-/*#include <stdio.h>
 #include <string.h>
+#include <stddef.h>
 
-int	ft_strlen(char *str);
+size_t	ft_strlcpy(char * dst, const char * src, size_t dstsize);
+
+//size_t	ft_strlcat(char * dst, const char * src, size_t dstsize);
 
 int	main(void)
 {
-	char	*a;
+	char	src[]= "buenas tardes";
+	char	dst[] = "8888";
+	size_t			dstsize;
 
-	a = "lili";
-	printf("la cantidad de caracteres es %d \n", ft_strlen(a));
-	return (0);
+	dstsize = 5;
+	printf("%s\n", strlcpy(dest, src, destsize));
+	//printf("%s\n", memmove(dest, src, len));
 }
-*/
+
+/*size_t	ft_strlcpy(char * dst, const char * src, size_t dstsize)
+{
+	size_t	i;
+	size_t	j;
+	if ()
+}*/

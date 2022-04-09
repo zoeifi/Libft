@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 13:09:32 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/06 15:37:26 by lporras-         ###   ########.fr       */
+/*   Created: 2022/03/29 16:48:52 by lporras-          #+#    #+#             */
+/*   Updated: 2022/04/06 15:36:25 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+int	ft_isalpha(int a)
 {
-	if (c >= 65 && c <= 90)
+	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122))
 	{
-		c = c + 32;
+		return (1);
 	}
-	return (c);
+	else
+	{
+		return (0);
+	}
 }
 
-/*#include <ctype.h>
-#include <stdio.h>
+/*#include <stdio.h>
+#include <string.h>
 
-int	ft_tolower(int c);
+int	ft_isalpha(int a);
 
 int	main(void)
 {
-	int	a;
-
-	a = 'B';
-	printf("el valor en mayusculas de la funcion es: %c\n", tolower(a));
-	printf("el valor en mayusculas de mi funcion es: %c\n", ft_tolower(a));
+	int	x;
+	char	b[] = "5af5*";
+	for(x = 0; b[x]; x++)
+		printf("%c, %d\n", b[x], ft_isalpha(b[x]));
 }*/

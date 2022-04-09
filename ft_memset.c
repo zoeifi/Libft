@@ -6,11 +6,26 @@
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 18:25:28 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/02 17:06:26 by lporras-         ###   ########.fr       */
+/*   Updated: 2022/04/06 15:31:52 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t			i;
+
+	i = 0;
+	while (i < len)
+	{
+		((unsigned char *)b)[i] = c;
+		i++;
+	}
+	return (b);
+}
+
+/*#include <stdio.h>
 #include <string.h>
 #include <stddef.h>
 
@@ -26,22 +41,7 @@ int	main(void)
 	len = 4;
 	printf("mi funcion: %s\n", ft_memset(a, c, len));
 }
-
-void	*ft_memset(void *b, int c, size_t len)
-{
-	size_t			i;
-
-	i = 0;
-	while (i < len)
-	{
-		((unsigned char *)b)[i] = c;
-		i++;
-	}
-	return (b);
-}
-
-
-/*int	main(void)
+int	main(void)
 {
 	char a[] ="luz mary";
 
@@ -49,9 +49,9 @@ void	*ft_memset(void *b, int c, size_t len)
 	memset(a, '.', 4);
 	puts(a);
 	return (0);
-}*/
+}
 
-/*void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			i;
 	char	*str;
@@ -64,9 +64,9 @@ void	*ft_memset(void *b, int c, size_t len)
 		i++;
 	}
 	return (b);
-}*/
+}
 
-/*void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			i;
 	unsigned char	*str;

@@ -1,36 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*   prueba.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/29 16:48:52 by lporras-          #+#    #+#             */
-/*   Updated: 2022/03/30 17:52:02 by lporras-         ###   ########.fr       */
+/*   Created: 2022/04/06 16:20:57 by lporras-          #+#    #+#             */
+/*   Updated: 2022/04/06 18:08:56 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-//#include <string.h>
-
-int	ft_libft(int a);
+#include "libft.h"
 
 int	main(void)
 {
-	int	x;
-	char	b[] = "5af5*";
-	for(x = 0; b[x]; x++)
-		printf("%c, %d\n", b[x], ft_libft(b[x]));
+	unsigned char	src[]= "buenas tardes";
+	unsigned char	dest[] = "8888";
+    size_t len = 5;
+    printf("%s\n", ft_memmove(dest, src, len));
+	printf("%s\n", memmove(dest, src, len));
 }
 
-int	ft_libft(int a)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if ((a >= 64 && a <= 90) || (a >= 97 && a <= 122))
+	char	*d;
+	char	*o;
+
+	d = (char *)dst;
+	o = (char *)src;
+	if (d > o)
 	{
-		return (1);
+		while (len--)
+		{
+			d[len] = o[len];
+		}
 	}
-	else
+	else if (d < o)
 	{
-		return (0);
+		ft_memcpy(dst, src, len);
 	}
+	return (d);
 }
