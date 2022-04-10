@@ -1,40 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/01 17:29:33 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/10 12:15:53 by lporras-         ###   ########.fr       */
+/*   Created: 2022/04/10 10:38:40 by lporras-          #+#    #+#             */
+/*   Updated: 2022/04/10 11:49:58 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	char	*str;
+	int		i;
 
 	i = 0;
+	str = (char *)s;
 	while (str[i] != '\0')
 	{
+		if (str[i] == c)
+			return (&str[i]);
 		i++;
 	}
-	return (i);
+	if (str[i] == '\0' && c == '\0')
+	{
+		return (&str[i]);
+	}
+	return (NULL);
 }
 
-/*#include <stdio.h>
-#include <string.h>
+/*#include <string.h>
+#include <stdio.h>
 
-int	ft_strlen(char *str);
+char	*ft_strchr(const char *s, int c);
 
 int	main(void)
 {
-	char	*a;
+	const char	s[] = "maria";
+	int			c;
 
-	a = "lili";
-	printf("la cantidad de caracteres es %d \n", ft_strlen(a));
-	return (0);
-}
-*/
+	c = 'i';
+	printf("la función original %s\n", strchr(s, c));
+	printf("mi función %s\n", ft_strchr(s, c));
+}*/
