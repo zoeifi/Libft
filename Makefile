@@ -6,7 +6,7 @@
 #    By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/03 18:10:39 by lporras-          #+#    #+#              #
-#    Updated: 2022/04/10 18:54:41 by lporras-         ###   ########.fr        #
+#    Updated: 2022/04/23 14:18:24 by lporras-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,9 @@ SRC =	ft_bzero.c		\
 		ft_strlcpy.c	\
 		ft_strrchr.c 	\
 		ft_strncmp.c 	\
+		ft_strnstr.c 	\
 		ft_memcmp.c 	\
+		ft_atoi.c 		\
 
 INCLUDES = libft.h
 
@@ -55,7 +57,10 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	
+
 re: fclean all
+
+test:
+	$(CC) -g $(SRC) main.c
 
 .PHONY: all clean fclean re

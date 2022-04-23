@@ -6,7 +6,7 @@
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 18:25:14 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/06 15:36:35 by lporras-         ###   ########.fr       */
+/*   Updated: 2022/04/20 17:02:05 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 int	ft_isascii(int a)
 {
-	if (a >= 128)
+	if ((a < 0) || (a > 127))
 	{
 		return (0);
 	}
-	else
-	{
-		return (1);
-	}
+	return (1);
 }
 
 /*#include <stdio.h>

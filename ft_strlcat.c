@@ -6,7 +6,7 @@
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 18:51:21 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/10 13:20:31 by lporras-         ###   ########.fr       */
+/*   Updated: 2022/04/23 12:38:15 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	so = ft_strlen(dst);
-	sd = ft_strlen(src);
-	if (dstsize < sd + 1)
+	so = ft_strlen(src);
+	sd = ft_strlen(dst);
+	if (!(so && sd))
+		return (0);
+	if (dstsize < sd)
 	{
 		return (so + dstsize);
 	}
@@ -29,7 +31,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	{
 		while ((i < (dstsize - sd - 1)) && (src[i] != '\0'))
 		{
-			dst[sd + i] = src [i];
+			dst[sd + i] = src[i];
 			i++;
 		}
 	}	
