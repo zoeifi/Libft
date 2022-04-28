@@ -6,7 +6,7 @@
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 18:51:21 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/23 12:38:15 by lporras-         ###   ########.fr       */
+/*   Updated: 2022/04/26 20:28:27 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	i = 0;
 	so = ft_strlen(src);
 	sd = ft_strlen(dst);
-	if (!(so && sd))
-		return (0);
 	if (dstsize < sd)
 	{
 		return (so + dstsize);

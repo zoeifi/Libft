@@ -6,7 +6,7 @@
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:08:31 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/10 11:51:32 by lporras-         ###   ########.fr       */
+/*   Updated: 2022/04/27 20:16:59 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	j = 0;
-	if (src == NULL || dst == NULL)
-		return (0);
 	while (src[i] != '\0')
 		i++;
 	if (dstsize != 0)

@@ -6,7 +6,7 @@
 /*   By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 19:07:53 by lporras-          #+#    #+#             */
-/*   Updated: 2022/04/19 18:28:54 by lporras-         ###   ########.fr       */
+/*   Updated: 2022/04/26 20:11:26 by lporras-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include<stdlib.h>
 # include<string.h>
 # include<stddef.h>
-# include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int a);
@@ -41,5 +40,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s);
 
 #endif
