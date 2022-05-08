@@ -6,7 +6,7 @@
 #    By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/03 18:10:39 by lporras-          #+#    #+#              #
-#    Updated: 2022/04/26 19:27:39 by lporras-         ###   ########.fr        #
+#    Updated: 2022/05/08 17:05:43 by lporras-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,10 @@ SRC =	ft_bzero.c		\
 		ft_atoi.c 		\
 		ft_calloc.c 	\
 		ft_strdup.c 	\
+		ft_substr.c 	\
+		ft_strjoin.c 	\
+		ft_strtrim.c 	\
+		ft_itoa.c 		\
 
 INCLUDES = libft.h
 
