@@ -6,7 +6,7 @@
 #    By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/03 18:10:39 by lporras-          #+#    #+#              #
-#    Updated: 2022/05/20 17:44:48 by lporras-         ###   ########.fr        #
+#    Updated: 2022/05/20 20:14:23 by lporras-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,11 @@ SRC_BONUS = ft_lstnew_bonus.c 			\
 			ft_lstsize_bonus.c			\
 			ft_lstlast_bonus.c			\
 			ft_lstadd_back_bonus.c 		\
-		
+			ft_lstdelone_bonus.c 		\
+			ft_lstclear_bonus.c 		\
+			ft_lstiter_bonus.c 			\
+			ft_lstmap_bonus.c 			\
+					
 INCLUDES = libft.h
 
 
@@ -76,7 +80,7 @@ bonus: $(OBJ) $(OBJ_BONUS)
 			ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
