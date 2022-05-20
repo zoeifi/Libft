@@ -6,7 +6,7 @@
 #    By: lporras- <lporras-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/03 18:10:39 by lporras-          #+#    #+#              #
-#    Updated: 2022/05/08 17:05:43 by lporras-         ###   ########.fr        #
+#    Updated: 2022/05/20 17:44:48 by lporras-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,26 @@ SRC =	ft_bzero.c		\
 		ft_strjoin.c 	\
 		ft_strtrim.c 	\
 		ft_itoa.c 		\
+		ft_strmapi.c 	\
+		ft_striteri.c 	\
+		ft_putchar_fd.c \
+		ft_putstr_fd.c 	\
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c 	\
+		ft_memchr.c 	\
+		ft_split.c		\
 
+SRC_BONUS = ft_lstnew_bonus.c 			\
+			ft_lstadd_front_bonus.c 	\
+			ft_lstsize_bonus.c			\
+			ft_lstlast_bonus.c			\
+			ft_lstadd_back_bonus.c 		\
+		
 INCLUDES = libft.h
 
-#OBJ_BONUS = $(SRC_BONUS:.c=.o)
+
 OBJ = $(SRC:.c=.o)
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 CC = gcc
 AR = ar rc
@@ -52,11 +67,13 @@ RM = /bin/rm -f
 all: $(NAME)
 
 $(NAME) : $(OBJ) $(INCLUDES)
-	$(AR) $(NAME) $(OBJ)
-	
+	$(AR) $(NAME) $(OBJ) 
 	
 %.o : %.c
-	$(CC) $(CFLAGS) -c $(SRC)
+	$(CC) $(CFLAGS) -c $(SRC) $(SRC_BONUS)
+
+bonus: $(OBJ) $(OBJ_BONUS)
+			ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
 
 clean:
 	$(RM) $(OBJ)
